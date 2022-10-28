@@ -14,9 +14,9 @@ from mmcv.utils import print_log
 from terminaltables import AsciiTable
 
 from mmdet.core import eval_recalls
-from .api_wrappers import COCO, COCOeval
-from .builder import DATASETS
-from .custom import CustomDataset
+from mmdet.datasets.api_wrappers import COCO, COCOeval
+from mmdet.datasets.builder import DATASETS
+from mmdet.datasets.custom import CustomDataset
 
 
 @DATASETS.register_module()

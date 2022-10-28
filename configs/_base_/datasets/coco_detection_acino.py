@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'AcinoDataset'
-data_root = 'acino/'
+data_root = '../storage/acino/'
 classes=['cheetah']
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
@@ -30,10 +30,8 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=32,#2
+    samples_per_gpu=4,#2
     workers_per_gpu=2,
-    # val_dataloader=dict(samples_per_gpu=32),#
-    # test_dataloader=dict(samples_per_gpu=32),#
     train=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/acino_train.json',
@@ -53,3 +51,4 @@ data = dict(
         classes=classes,
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
+
